@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply for Job - CampusConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Apply for a Job</h1>
+        <p>Submit a student application for an available opportunity</p>
+    </header>
+
+    <form method="POST">
+
+        <label>Select Student:</label>
+        <select name="student_id" required>
+            <option value="">-- Select Student --</option>
+
+            {% for student in students %}
+                <option value="{{ student[0] }}">
+                    {{ student[1] }} ({{ student[2] }})
+                </option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <label>Select Job:</label>
+        <select name="job_id" required>
+            <option value="">-- Select Job --</option>
+
+            {% for job in jobs %}
+                <option value="{{ job[0] }}">
+                    {{ job[1] }} - {{ job[2] }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <button type="submit">Submit Application</button>
+
+    </form>
+
+    <a href="/" class="back-link">← Back to Home</a>
+
+</div>
+
+</body>
+</html>

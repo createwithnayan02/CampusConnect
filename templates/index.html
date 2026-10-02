@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>CampusConnect</h1>
+        <p>College Internship & Placement Management System</p>
+    </header>
+
+    <div class="card">
+        <h2>Welcome!</h2>
+        <p>
+            Manage students, companies, jobs and applications
+            in one place.
+        </p>
+    </div>
+
+    <br>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Students</h3>
+            <p>View registered students and their academic details.</p>
+            <a href="/students" class="btn">View Students</a>
+        </div>
+
+        <div class="card">
+            <h3>Jobs</h3>
+            <p>Explore currently available internship and placement opportunities.</p>
+            <a href="/jobs" class="btn">View Jobs</a>
+        </div>
+
+        <div class="card">
+            <h3>Applications</h3>
+            <p>Submit and track student job applications.</p>
+            <a href="/apply" class="btn">Apply for Job</a>
+            <a href="/applications" class="btn">View Applications</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

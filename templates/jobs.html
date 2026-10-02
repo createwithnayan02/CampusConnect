@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Jobs - CampusConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Available Jobs</h1>
+        <p>Internship and placement opportunities</p>
+    </header>
+
+    {% if jobs %}
+
+    <table>
+        <tr>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Type</th>
+            <th>Location</th>
+            <th>Minimum CGPA</th>
+            <th>Deadline</th>
+        </tr>
+
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job[0] }}</td>
+            <td>{{ job[1] }}</td>
+            <td>{{ job[2] }}</td>
+            <td>{{ job[3] }}</td>
+            <td>{{ job[4] }}</td>
+            <td>{{ job[5] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+        <div class="card">
+            <p>No open jobs available.</p>
+        </div>
+    {% endif %}
+
+    <a href="/" class="back-link">← Back to Home</a>
+
+</div>
+
+</body>
+</html>
